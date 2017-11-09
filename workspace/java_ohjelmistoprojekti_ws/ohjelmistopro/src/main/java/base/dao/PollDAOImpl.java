@@ -13,6 +13,8 @@ import base.bean.Poll;
 @Repository
 public class PollDAOImpl implements PollDAO {
 
+	
+	// TODO 
 	@Inject
 	private JdbcTemplate jdbcTemplate;
 
@@ -32,7 +34,7 @@ public class PollDAOImpl implements PollDAO {
 	public List<Poll> haeKaikki() {
 		List<Poll> kyselyt = new ArrayList<Poll>();
 //		List<Poll> kyselyt;
-		String sql = "SELECT id, nimi, published FROM kysely";
+		String sql = "SELECT id, nimi, publboolean FROM kysely";
 		PollRowMapper rowMapper = new PollRowMapper();
 		kyselyt = jdbcTemplate.query(sql, rowMapper);
 		Poll poll = new Poll(1, "Kysely1", false);
@@ -42,8 +44,8 @@ public class PollDAOImpl implements PollDAO {
 	}
 
 	public void talleta(Poll poll) {
-		String sql = "INSERT INTO kysely(nimi) VALUES (?)";
-		Object[] parametrit = new Object[] { poll.getName() };
+		String sql = "INSERT INTO kysely(nimi, publboolean) VALUES (?,?)";
+		Object[] parametrit = new Object[] { poll.getName(), false };
 		jdbcTemplate.update(sql, parametrit);
 
 	}
