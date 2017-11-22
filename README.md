@@ -17,9 +17,11 @@ POST /ohjelmistopro/poll/
 *************************************
 
 // hae kysymykset
+
 GET /ohjelmistopro/question/id
 
 // tallenna kysymys
+
 POST /ohjelmistopro/question/
 
 **************************************
@@ -27,11 +29,14 @@ POST /ohjelmistopro/question/
 // vastaukset yhteen kysymykseen
 
 // /kyselynro/kysymysnro
+
 GET /ohjelmistopro/answer/4/25
 
 // vastaukset kyselyn kaikkiin kysymyksiin
 // /kyselynro/
+
 GET /ohjelmistopro/answer/4/
 
 // tallenna vastaus
+
 POST /ohjelmistopro/answer
