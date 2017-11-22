@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -23,7 +24,12 @@ public class QuestionDAOImpl implements QuestionDAO {
 		List<Question> questions;
 		String sql = "SELECT kysymysId, kysymysNimi, kyselyId FROM kysymys WHERE kyselyId = '"+id+"'";
 		QuestionRowMapper rowMapper = new QuestionRowMapper();
-		questions = jdbcTemplate.query(sql, rowMapper);
+		
+		try {
+			questions = jdbcTemplate.query(sql, rowMapper);
+		} catch (IncorrectResultSizeDataAccessException e) {
+			throw new QuestionNotFoundException(e);
+		}	
 		return questions;
 	}
 
