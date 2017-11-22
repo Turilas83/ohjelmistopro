@@ -4,31 +4,34 @@
 
 // hae kaikki kyselyt
 
-/ohjelmistopro/poll
+GET /ohjelmistopro/poll
 
 // hae tietty kysely
 
-/ohjelmistopro/poll/id
+GET /ohjelmistopro/poll/id
 
 // tallenna kysely 
 
-/ohjelmistopro/poll/
+POST /ohjelmistopro/poll/
 
 *************************************
 
 // hae kysymykset
-/ohjelmistopro/question/id
+GET /ohjelmistopro/question/id
 
 // tallenna kysymys
-/ohjelmistopro/question/
+POST /ohjelmistopro/question/
 
 **************************************
 
 // vastaukset yhteen kysymykseen
 
 // /kyselynro/kysymysnro
-/ohjelmistopro/answer/4/25
+GET /ohjelmistopro/answer/4/25
 
 // vastaukset kyselyn kaikkiin kysymyksiin
 // /kyselynro/
-/ohjelmistopro/answer/4/
+GET /ohjelmistopro/answer/4/
+
+// tallenna vastaus
+POST /ohjelmistopro/answer
