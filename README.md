@@ -1,16 +1,28 @@
 # ohjelmistopro
 
 // hae kaikki kyselyt
-http://localhost:8080/ohjelmistopro/kyselyt
+
+/ohjelmistopro/poll
 
 // hae tietty kysely
-http://localhost:8080/ohjelmistopro/kyselyt/id
+
+/ohjelmistopro/poll/id
 
 // tallenna kysely 
-http://localhost:8080/ohjelmistopro/kyselyt/tallenna
+
+/ohjelmistopro/poll/
 
 // hae kysymykset
-http://localhost:8080/ohjelmistopro/kysymykset/id
+/ohjelmistopro/question/id
 
 // tallenna kysymys
-http://localhost:8080/ohjelmistopro/kysymykset/tallenna
+/ohjelmistopro/question/
+
+// vastaukset yhteen kysymykseen
+
+// /kyselynro/kysymysnro
+/ohjelmistopro/answer/4/25
+
+// vastaukset kyselyn kaikkiin kysymyksiin
+// /kyselynro/
+/ohjelmistopro/answer/4/
