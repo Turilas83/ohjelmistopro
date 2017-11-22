@@ -1,5 +1,7 @@
 # ohjelmistopro
 
+**************************************
+
 // hae kaikki kyselyt
 
 /ohjelmistopro/poll
@@ -12,11 +14,15 @@
 
 /ohjelmistopro/poll/
 
+*************************************
+
 // hae kysymykset
 /ohjelmistopro/question/id
 
 // tallenna kysymys
 /ohjelmistopro/question/
+
+**************************************
 
 // vastaukset yhteen kysymykseen
 
