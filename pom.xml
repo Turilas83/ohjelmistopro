@@ -8,6 +8,10 @@
 	<name>projektityö</name>
 	<description>digikysely</description>
 
+	<properties>
+		<spring.security.version>3.2.1.RELEASE</spring.security.version>
+	</properties>
+	
 	<dependencies>
 		<!-- Spring Core -->
 		<dependency>
@@ -85,9 +89,27 @@
 		</dependency>
 		
 		<dependency>
+<<<<<<< HEAD
 			<groupId>javax.validation</groupId>
 			<artifactId>validation-api</artifactId>
 			<version>1.1.0.Final</version>
+=======
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-core</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${spring.security.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring.security.version}</version>
+>>>>>>> 6b03b97435c347459d12a834486e4993f683e58b
 		</dependency>
 
 	</dependencies>
