@@ -2,11 +2,16 @@ package base.bean;
 
 import java.util.Date;
 
+import javax.validation.constraints.Pattern;
+
 public class Answer {
 	private int ansId = 0;
 	private int pollId = 0;
 	private int questionId = 0;
+	
+	@Pattern(regexp = "\\w[a-zA-Z_0-9]")
 	private String answer = null;
+	
 	private Date stamp = null;
 	
 	public Answer() {
