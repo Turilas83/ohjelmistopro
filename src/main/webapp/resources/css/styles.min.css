@@ -1,0 +1,27 @@
+#polls {
+	width: 60%;
+	background-color: #EFE;
+	margin-left: auto;
+	margin-right: auto;
+	border: 1px solid #efe;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 100vh;
+}	
+		
+.left {
+	float: left;
+}
+
+h1 {
+	text-align: center;
+}
+
+div.panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.vaihtoehto {
+	width: 50% !important;
+}

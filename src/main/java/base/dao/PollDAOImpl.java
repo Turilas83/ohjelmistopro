@@ -52,4 +52,18 @@ public class PollDAOImpl implements PollDAO {
 		jdbcTemplate.update(sql, parametrit);
 
 	}
+
+	public void poista(int id) {
+		String sql = "DELETE FROM kysely WHERE id = '" + id + "'";
+		jdbcTemplate.update(sql);
+
+	}
+
+	public void paivita(Poll poll) {
+		String sql = "UPDATE kysely SET nimi = ? WHERE id = ?";
+		Object[] parametrit = new Object[] { poll.getName(), poll.getId() };
+		jdbcTemplate.update(sql, parametrit);
+
+	}
+	
 }

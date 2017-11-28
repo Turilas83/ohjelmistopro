@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -24,12 +23,7 @@ public class QuestionDAOImpl implements QuestionDAO {
 		List<Question> questions;
 		String sql = "SELECT kysymysId, kysymysNimi, kyselyId FROM kysymys WHERE kyselyId = '"+id+"'";
 		QuestionRowMapper rowMapper = new QuestionRowMapper();
-		
-		try {
-			questions = jdbcTemplate.query(sql, rowMapper);
-		} catch (IncorrectResultSizeDataAccessException e) {
-			throw new QuestionNotFoundException(e);
-		}	
+		questions = jdbcTemplate.query(sql, rowMapper);
 		return questions;
 	}
 
@@ -38,4 +32,18 @@ public class QuestionDAOImpl implements QuestionDAO {
 		Object[] parametrit = new Object[] { question.getKysymys(), question.getKyselyid() };
 		jdbcTemplate.update(sql, parametrit);		
 	}
+	
+	public void muokkaa(Question question) {
+		String sql = "UPDATE kysymys SET kysymysNimi = ? WHERE kyselyId = ? AND kysymysId = ?";
+		Object[] parametrit = new Object[] { question.getKysymys(), question.getKyselyid(), question.getKysymysId() };
+		jdbcTemplate.update(sql, parametrit);		
+	}
+	
+	public void poista(int kysid, int pollid) {
+		String sql = "DELETE FROM kysymys WHERE kysymysId = '" + kysid + "' AND kyselyId = '"+ pollid +"'";
+		jdbcTemplate.update(sql);
+
+	}
+
+
 }

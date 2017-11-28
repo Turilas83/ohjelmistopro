@@ -14,6 +14,7 @@ public class PollRowMapper implements RowMapper<Poll> {
 		Poll poll = new Poll();
 		poll.setId(rs.getInt("id"));
 		poll.setName(rs.getString("nimi"));
+//		poll.setPublished(rs.getBoolean("publboolean"));
 		return poll;
 	}
 }

@@ -3,6 +3,7 @@ package base.bean;
 public class Poll {
 	private int id;
 	private String name;
+	private boolean published;
 
 	public Poll() {
 		super();
@@ -14,6 +15,13 @@ public class Poll {
 		super();
 		this.id = id;
 		this.name = name;
+	}
+
+	public Poll(int id, String name, boolean published) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.published = published;
 	}
 
 	public int getId() {
@@ -32,8 +40,21 @@ public class Poll {
 		this.name = name;
 	}
 
+	public boolean isPublished() {
+		return published;
+	}
+
+	public void setPublished(boolean published) {
+		this.published = published;
+	}
+
+	public boolean getPublished() {
+		return published;
+	}
+
+	@Override
 	public String toString() {
-		return "KyselyImpl [id=" + id + ", name=" + name + "]";
+		return "KyselyImpl [id=" + id + ", name=" + name + ", published=" + published + "]";
 	}
 
 }
