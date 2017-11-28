@@ -4,8 +4,8 @@ function load() {
 	$("[name='published']").bootstrapSwitch();
 	$(".list-group").empty();
 	$.ajax({
-//        url: 'http://proto355.haaga-helia.fi:8080/ohjelmistopro/poll',
-		url: 'http://localhost:8080/ohjelmistopro/poll',
+        url: 'http://proto355.haaga-helia.fi:8080/ohjelmistopro/poll',
+//		url: 'http://localhost:8080/ohjelmistopro/poll',
         type: 'GET',
 		dataType: 'json',
         success: function (data) {
@@ -61,8 +61,8 @@ var id = null;
 function tallennaUusiKysely() {
 	kysely = document.getElementById("newPollName").value;
 		$.ajax({
-//			url: 'http://proto355.haaga-helia.fi:8080/ohjelmistopro/poll',
-			url: 'http://localhost:8080/ohjelmistopro/poll',
+			url: 'http://proto355.haaga-helia.fi:8080/ohjelmistopro/poll',
+//			url: 'http://localhost:8080/ohjelmistopro/poll',
 			type: 'POST',
 			data: JSON.stringify({ name: kysely }),
 			contentType: "application/json; charset=utf-8",
@@ -103,8 +103,8 @@ function showAnswers() {
 function getQuestions(pollId) {
 	$("#questionDiv").empty();
 	$.ajax({
-//      url: 'http://proto355.haaga-helia.fi:8080/ohjelmistopro/question/'+pollId+'',
-		url: 'http://localhost:8080/ohjelmistopro/question/'+pollId+'',
+        url: 'http://proto355.haaga-helia.fi:8080/ohjelmistopro/question/'+pollId+'',
+//		url: 'http://localhost:8080/ohjelmistopro/question/'+pollId+'',
         type: 'GET',
 		dataType: 'json',
         success: function (data) {
@@ -123,8 +123,8 @@ function getQuestions(pollId) {
 function poistaKysely() {
 	kyselyid = this.id;
 		$.ajax({
-//			url: 'http://proto355.haaga-helia.fi:8080/ohjelmistopro/poll/'+id+'',
-			url: 'http://localhost:8080/ohjelmistopro/poll/'+id+'',
+			url: 'http://proto355.haaga-helia.fi:8080/ohjelmistopro/poll/'+id+'',
+//			url: 'http://localhost:8080/ohjelmistopro/poll/'+id+'',
 			type: 'DELETE',
 			dataType: "json",
 			error: function (xhr, textStatus, errorThrown) {
@@ -139,8 +139,8 @@ function poistaKysely() {
 function muokkaaKysely(kyselyNimi) {
 	kyselyid = this.id;
 		$.ajax({
-//			url: 'http://proto355.haaga-helia.fi:8080/ohjelmistopro/poll',
-			url: 'http://localhost:8080/ohjelmistopro/poll',
+			url: 'http://proto355.haaga-helia.fi:8080/ohjelmistopro/poll',
+//			url: 'http://localhost:8080/ohjelmistopro/poll',
 			type: 'PUT',
 			data: JSON.stringify({ name: kyselyNimi, id: kyselyid }),
 			contentType: "application/json; charset=utf-8",
@@ -155,8 +155,8 @@ function muokkaaKysely(kyselyNimi) {
 
 function poistaKysymys() {
 		$.ajax({
-//			url: 'http://proto355.haaga-helia.fi:8080/ohjelmistopro/question/'+kyselyId+'/'+kysymysId+'',
-			url: 'http://localhost:8080/ohjelmistopro/question/'+kyselyId+'/'+kysymysId+'',
+			url: 'http://proto355.haaga-helia.fi:8080/ohjelmistopro/question/'+kyselyId+'/'+kysymysId+'',
+//			url: 'http://localhost:8080/ohjelmistopro/question/'+kyselyId+'/'+kysymysId+'',
 			type: 'DELETE',
 			dataType: "json",
 			error: function (xhr, textStatus, errorThrown) {
@@ -171,8 +171,8 @@ function poistaKysymys() {
 
 function uusiKysymys(kyselyid, kysymys) {
 		$.ajax({
-//			url: 'http://proto355.haaga-helia.fi:8080/ohjelmistopro/question',
-			url: 'http://localhost:8080/ohjelmistopro/question',
+			url: 'http://proto355.haaga-helia.fi:8080/ohjelmistopro/question',
+//			url: 'http://localhost:8080/ohjelmistopro/question',
 			type: 'POST',
 			data: JSON.stringify({ kyselyid: kyselyid, kysymys: kysymys }),
 			contentType: "application/json; charset=utf-8",
@@ -187,8 +187,8 @@ function uusiKysymys(kyselyid, kysymys) {
 
 function muutaKysymys(kyselyid, kysymysid, kysymys) {
 		$.ajax({
-//			url: 'http://proto355.haaga-helia.fi:8080/ohjelmistopro/question',
-			url: 'http://localhost:8080/ohjelmistopro/question',
+			url: 'http://proto355.haaga-helia.fi:8080/ohjelmistopro/question',
+//			url: 'http://localhost:8080/ohjelmistopro/question',
 			type: 'PUT',
 			data: JSON.stringify({ kyselyid: kyselyid, kysymysId: kysymysid, kysymys: kysymys }),
 			contentType: "application/json; charset=utf-8",
