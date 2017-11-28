@@ -15,6 +15,9 @@
 
 ## vastaukset
 ### GET /kyselynro/kysymysnro
-### GET /ohjelmistopro/answer/4/25
-### GET /ohjelmistopro/answer/4/
+### GET /ohjelmistopro/answer/kyselyid/kysymysid
+### GET /ohjelmistopro/answer/kyselyid
 ### POST /ohjelmistopro/answer
+
+
+
