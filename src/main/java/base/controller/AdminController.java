@@ -9,12 +9,10 @@ import org.springframework.web.servlet.ModelAndView;
 @CrossOrigin
 @Controller
 public class AdminController {
-	
+
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public ModelAndView main() {
-	    ModelAndView modelAndview = new ModelAndView("secure/admin.jsp");
-	    return modelAndview;
-	    
+		ModelAndView modelAndview = new ModelAndView("views/secure/admin.jsp");
+		return modelAndview;
 	}
-
 }
