@@ -12,7 +12,7 @@ public class AdminController {
 
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public ModelAndView main() {
-		ModelAndView modelAndview = new ModelAndView("views/secure/admin.jsp");
+		ModelAndView modelAndview = new ModelAndView("secure/admin");
 		return modelAndview;
 	}
 }
