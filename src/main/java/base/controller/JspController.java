@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @CrossOrigin
 @Controller
-public class AdminController {
+public class JspController {
 
 	@RequestMapping(value = "/admin", method = RequestMethod.GET)
 	public String main() {
