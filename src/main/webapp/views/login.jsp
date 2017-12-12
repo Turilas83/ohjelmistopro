@@ -33,11 +33,11 @@
 			<fieldset>
 				<table>
 					<tr>
-						<td>USERNAME:</td>
+						<td>KÄYTTÄJÄTUNNUS:</td>
 						<td><input type='text' name='j_username' value=''></td>
 					</tr>
 					<tr>
-						<td>PASSWORD:</td>
+						<td>SALASANA:</td>
 						<td><input type='password' name='j_password' /></td>
 					</tr>
 					<tr>
