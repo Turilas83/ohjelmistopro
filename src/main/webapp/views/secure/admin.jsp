@@ -1,4 +1,12 @@
 <%@page contentType="text/html;charset=UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
+
+<%@page contentType="text/html;charset=UTF-8"%>
 <%@page pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -28,6 +36,17 @@
 
 <body>
 	<div id="container">
+
+		<sec:authorize access="isAuthenticated()">
+			<div id="userPanel">
+				<p>
+					Käyttäjä:
+					<sec:authentication property="principal.username" />
+					<br><a href="j_spring_security_logout">Kirjaudu ulos</a>
+				</p>
+			</div>
+		</sec:authorize>
+
 		<div id="polls">
 			<h4>Kyselyt</h4>
 			<div class="list-group" id="kyselyt"></div>

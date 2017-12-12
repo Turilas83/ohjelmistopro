@@ -172,7 +172,7 @@ function showAnswers(pollname, id) {
 //							if (splitted[0] != 3) {
 								wincontent += "<canvas style=\"border: 1px solid black; float: right; margin-right: 20%;\" id=\"canvas"
 										+ lastquestionid
-										+ "\" width=\"350\" height=\"250\"></canvas><br>";
+										+ "\" width=\"400\" height=\"250\"></canvas><br>";
 
 								canvasid = "canvas" + lastquestionid;
 								pietitle = kysymys;

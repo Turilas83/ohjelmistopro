@@ -10,58 +10,57 @@
 	http://www.springframework.org/schema/security
 	http://www.springframework.org/schema/security/spring-security.xsd">
 
-	<import resource="spring-data.xml" /> 
-	
-	<mvc:resources mapping="/resources/**" location="/resources/" /> 
-	
-	  <context:component-scan base-package="base" /> 
+	<import resource="spring-data.xml" />
+
+	<mvc:resources mapping="/resources/**" location="/resources/" />
+
+	<context:component-scan base-package="base" />
 	<!-- Configures the @Controller programming model -->
-	  <mvc:annotation-driven /> 
+	<mvc:annotation-driven />
 
 	<!-- Forwards requests to the "/" resource to the "welcome" view -->
-	  <mvc:view-controller path="/" view-name="login" /> 
+	<mvc:view-controller path="/" view-name="login" />
 
-	<!--  SPRING SECURITY -->
+	<!-- SPRING SECURITY -->
 	<sec:http auto-config="true" use-expressions="true">
-		
-		<sec:intercept-url pattern="/secure/**" access="hasRole('ROLE_ADMIN')" /> 
-		<sec:intercept-url pattern="/secure/**" access="isAuthenticated()" />
+
+		<sec:intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
+		<sec:intercept-url pattern="/admin/*" access="isAuthenticated()" />
 		<sec:intercept-url pattern="/*" access="permitAll" />
 
-		<sec:form-login
-			login-page="/login"
-			default-target-url="/secure/main"
+		<sec:form-login login-page="/" default-target-url="/admin"
 			authentication-failure-url="/loginfail" />
-			
+
 		<sec:logout logout-success-url="/logout" />
-		
+
 	</sec:http>
-	
-	<bean id="encoder" class="org.springframework.security.crypto.password.StandardPasswordEncoder" />
 
+	<bean id="encoder"
+		class="org.springframework.security.crypto.password.StandardPasswordEncoder" />
 
-	<!--<sec:authentication-manager>
+	<!-- 
+		<sec:authentication-manager> <sec:authentication-provider> 
+			<sec:password-encoder ref="encoder" /> 
+				<sec:jdbc-user-service data-source-ref="dataSource" users-by-username-query="SELECT 
+					id, username, password_encrypted FROM webuser WHERE username=? AND enabled 
+					= 1" authorities-by-username-query="select u.id, u.username, a.role from 
+					webuser u JOIN webuser_authority ua ON (u.id = ua.webuser_id) JOIN authority 
+					a ON (a.id = ua.authority_id) WHERE u.username = ?" /> 
+			</sec:authentication-provider> 
+		</sec:authentication-manager> 
+	-->
+
+	<sec:authentication-manager>
 		<sec:authentication-provider>
-			<sec:password-encoder ref="encoder" />
-			<sec:jdbc-user-service data-source-ref="dataSource" 
-				users-by-username-query="SELECT id, username, password_encrypted FROM webuser WHERE username=? AND enabled = 1" 
-				authorities-by-username-query="select u.id, u.username, a.role from webuser u JOIN webuser_authority ua ON (u.id = ua.webuser_id) JOIN authority a ON (a.id = ua.authority_id) WHERE u.username = ?"/>
+			<sec:user-service>
+				<sec:user name="user" password="userpassu" authorities="ROLE_USER" />
+				<sec:user name="admin" password="adminpassu" authorities="ROLE_ADMIN" />
+			</sec:user-service>
 		</sec:authentication-provider>
-	</sec:authentication-manager>-->
-	
-	
-	
-	 <sec:authentication-manager>
-			<sec:authentication-provider>
-				<sec:user-service>
-					  <sec:user name="user" password="userpassu" authorities="ROLE_USER" />
-					<sec:user name="admin" password="adminpassu" authorities="ROLE_ADMIN" />
-				</sec:user-service>
-			</sec:authentication-provider>
-		</sec:authentication-manager>
-	
+	</sec:authentication-manager>
 
-	<sec:global-method-security pre-post-annotations="enabled" />
+	<sec:global-method-security
+		pre-post-annotations="enabled" />
 
 
 </beans>
