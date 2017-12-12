@@ -1,10 +1,8 @@
 #polls {
-	width: 60%;
-	background-color: #EFE;
+	width: 45%;
 	margin-left: auto;
 	margin-right: auto;
 	border: 1px solid #efe;
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     height: 100vh;
 }	
 		
@@ -12,7 +10,10 @@
 	float: left;
 }
 
-h1 {
+h2 {
+	text-align: center;
+}
+h4 {
 	text-align: center;
 }
 
@@ -24,4 +25,11 @@ div.panel {
 
 .vaihtoehto {
 	width: 50% !important;
+	margin-top: 2px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#questionModal {
+	z-index: 9999;
 }

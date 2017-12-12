@@ -10,9 +10,9 @@ base\dao\AnswerRowMapper.class
 base\controller\PollController.class
 base\dao\QuestionDAO.class
 base\dao\QuestionRowMapper.class
-base\controller\AdminController.class
 base\dao\QuestionDAOImpl.class
 base\dao\AnswerDAOImpl.class
+base\controller\JspController.class
 base\dao\PollDAO.class
 base\dao\QuestionNotFoundException.class
 base\dao\PollNotFoundException.class

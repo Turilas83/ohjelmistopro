@@ -14,7 +14,6 @@
 ### DELETE /ohjelmistopro/question/kyselyid/kysymysid
 
 ## vastaukset
-### GET /kyselynro/kysymysnro
 ### GET /ohjelmistopro/answer/kyselyid/kysymysid
 ### GET /ohjelmistopro/answer/kyselyid
 ### POST /ohjelmistopro/answer

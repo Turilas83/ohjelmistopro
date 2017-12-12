@@ -1,20 +1,24 @@
+body {
+    background-image: url("bgtexture.jpg");
+}
+
 #polls {
 	width: 45%;
 	margin-left: auto;
 	margin-right: auto;
-	border: 1px solid #efe;
     height: 100vh;
+    background: rgba(255,255,255,.0);
+    overflow: hidden;
 }	
 		
 .left {
 	float: left;
 }
 
-h2 {
-	text-align: center;
-}
 h4 {
 	text-align: center;
+	font-family: courier;
+	font-weight: bold;
 }
 
 div.panel {
@@ -32,4 +36,10 @@ div.panel {
 
 #questionModal {
 	z-index: 9999;
+}
+
+.createbutton {
+	display: block;
+    margin: auto;
+    width: 123px !important;
 }

@@ -32,7 +32,7 @@ function load() {
 					}
 					$("#kyselyt")
 							.append(
-									"<i class=\"col-md-5\"></i><button data-toggle=\"modal\" data-target=\"#newpoll\" class=\"btn btn-primary\">Luo uusi kysely</button>");
+									"<div class=\"createbutton\"><i><button data-toggle=\"modal\" data-target=\"#newpoll\" class=\"btn btn-success\">Luo uusi kysely</button></i></div>");
 					var acc = document.getElementsByClassName("accordion");
 
 					for (var i = 0; i < acc.length; i++) {

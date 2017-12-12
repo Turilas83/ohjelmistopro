@@ -33,7 +33,7 @@
 						vaihtoehto</button>
 				</div>
 				<br> <br>
-				<div id="vaihtoehdot"></div>
+				<div id="vaihtoehdot"><br><br></div>
 				<br> <br>
 			</div>
 			<div class="modal-footer">
@@ -62,7 +62,7 @@
 				<div id="questionDiv"></div>
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-info left" data-dismiss="modal" data-toggle="modal" onclick="addQuestion();">Lis‰‰ kysymys</button>
+				<button type="button" class="btn btn-info left" onclick="addQuestion();">Lis‰‰ kysymys</button>
 				<button type="button" class="btn btn-default" data-dismiss="modal">Takaisin</button>
 			</div>
 		</div>
