@@ -78,19 +78,3 @@ button {
 	padding-left: 25px;
 	padding-right: 25px;
 }
-#kirjalista {
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-	padding-left: 15px;
-	padding-right: 15px;
-	padding-top: 15px;
-	padding-bottom: 15px;
-	background-color: #FAFAFA;
-	border-color: #333333;
-	border-width: 2px;
-	border-style: solid;
-	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	border-radius: 8px;
-}
