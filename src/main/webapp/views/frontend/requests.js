@@ -1,4 +1,4 @@
-	var questions = [];
+var questions = [];
 // ruokakyselyn id = 4
 	let kyselyId = 4;
 	function getData() {
@@ -56,7 +56,7 @@
 				lomake.innerHTML += "<br /><br /><button type=\"submit\">Lähetä</button>";					
 			}
 		}
-//		gethttp.open("GET", "http://proto355.haaga-helia.fi:8080/ohjelmistopro/question/"+kyselyId);
+// gethttp.open("GET", "http://proto355.haaga-helia.fi:8080/ohjelmistopro/question/"+kyselyId);
 		gethttp.open("GET", "http://localhost:8080/ohjelmistopro/question/"+kyselyId);
 		gethttp.responseType = 'json';
 		gethttp.send();
@@ -88,7 +88,8 @@
 				qid = questions[k].substring(7, );
 				kyselyId = "" + kyselyId;
 				if (sendAnswer(kyselyId, qid, answer)) {
-		}
+					// TODO
+				}
 	}
 	kiitos();
 	});
@@ -104,7 +105,7 @@
 				xmlhttp.response != null ? console.log(xmlhttp.response) : null;
 			}
 		}
-//		xmlhttp.open("POST", "http://proto355.haaga-helia.fi:8080/ohjelmistopro/answer");
+// xmlhttp.open("POST", "http://proto355.haaga-helia.fi:8080/ohjelmistopro/answer");
 		xmlhttp.open("POST", "http://localhost:8080/ohjelmistopro/answer");
 		xmlhttp.setRequestHeader("Content-Type", "application/json");
 		xmlhttp.responseType = 'json';
@@ -115,4 +116,4 @@
 	function kiitos() {
 		document.body.innerHTML = "<div id=\"kiitti\"><h1>Kiitos!</h1><p>Mahtavaa, että käytit aikaasi kyselyyn vastaamiseen!</p></div>";
 		return;
-	}
+}
