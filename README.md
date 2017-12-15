@@ -2,13 +2,13 @@
 
 ## kyselyt
 ### GET /ohjelmistopro/poll
-### GET /ohjelmistopro/poll/id
+### GET /ohjelmistopro/poll/kyselyid
 ### POST /ohjelmistopro/poll
 ### PUT /ohjelmistopro/poll
-### DELETE /ohjelmistopro/poll/id
+### DELETE /ohjelmistopro/poll/kyselyid
 
 ## kysymykset
-### GET /ohjelmistopro/question/id
+### GET /ohjelmistopro/question/kyselyid
 ### POST /ohjelmistopro/question
 ### PUT /ohjelmistopro/question
 ### DELETE /ohjelmistopro/question/kyselyid/kysymysid
