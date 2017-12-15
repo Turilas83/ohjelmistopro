@@ -56,7 +56,7 @@ var questions = [];
 				lomake.innerHTML += "<br /><br /><button type=\"submit\">Lähetä</button>";					
 			}
 		}
-// gethttp.open("GET", "http://proto355.haaga-helia.fi:8080/ohjelmistopro/question/"+kyselyId);
+// 		gethttp.open("GET", "http://proto355.haaga-helia.fi:8080/ohjelmistopro/question/"+kyselyId);
 		gethttp.open("GET", "http://localhost:8080/ohjelmistopro/question/"+kyselyId);
 		gethttp.responseType = 'json';
 		gethttp.send();
@@ -105,7 +105,7 @@ var questions = [];
 				xmlhttp.response != null ? console.log(xmlhttp.response) : null;
 			}
 		}
-// xmlhttp.open("POST", "http://proto355.haaga-helia.fi:8080/ohjelmistopro/answer");
+// 		xmlhttp.open("POST", "http://proto355.haaga-helia.fi:8080/ohjelmistopro/answer");
 		xmlhttp.open("POST", "http://localhost:8080/ohjelmistopro/answer");
 		xmlhttp.setRequestHeader("Content-Type", "application/json");
 		xmlhttp.responseType = 'json';
